@@ -1,0 +1,61 @@
+{
+  "description": "PM2.5 forecast for Delhi (Chandni Chowk). Prediction = naive baseline + learned correction, clipped at 0.",
+  "features": [
+    "pm25_lag0",
+    "pm25_lag1",
+    "pm25_lag2",
+    "pm25_lag3",
+    "pm25_lag6",
+    "pm25_lag12",
+    "pm25_lag24",
+    "pm25_roll6",
+    "pm25_roll24",
+    "pm25_change3",
+    "temperature_2m",
+    "relative_humidity_2m",
+    "wind_speed_10m",
+    "precipitation",
+    "surface_pressure",
+    "wind_dir_sin",
+    "wind_dir_cos",
+    "hour",
+    "dayofweek"
+  ],
+  "trained_through": "2026-10-07 19:00:00",
+  "lightgbm_params": {
+    "objective": "regression",
+    "learning_rate": 0.05,
+    "num_leaves": 15,
+    "min_data_in_leaf": 100,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "feature_fraction": 0.8,
+    "seed": 42,
+    "verbose": -1
+  },
+  "boosting_rounds": 200,
+  "leave_one_winter_out_avg_MAE_improvement_pct": {
+    "1": "no gain (use persistence)",
+    "6": 13.5,
+    "12": 9.7,
+    "24": 6.2
+  },
+  "known_weakness": "Under-predicts in winters more severe than any seen in training (e.g. 2025-26 when held out). Gains are smaller and less reliable at 12h and 24h than at 6h.",
+  "horizons": {
+    "6": {
+      "naive_lag": 0,
+      "train_rows": 18506,
+      "model_file": "pm25_h6.txt"
+    },
+    "12": {
+      "naive_lag": 12,
+      "train_rows": 16540,
+      "model_file": "pm25_h12.txt"
+    },
+    "24": {
+      "naive_lag": 0,
+      "train_rows": 17555,
+      "model_file": "pm25_h24.txt"
+    }
+  }
+}
