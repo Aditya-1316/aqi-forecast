@@ -1,0 +1,41 @@
+# Save as .github/workflows/forecast.yml in your repo
+name: Update forecast
+
+on:
+  schedule:
+    - cron: "17 * * * *"      # every hour at minute 17 (GitHub may delay scheduled runs)
+  workflow_dispatch:           # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write              # needed so the job can commit forecast.json
+
+concurrency:
+  group: forecast
+  cancel-in-progress: false
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run forecast pipeline
+        env:
+          OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+        run: python pipeline.py
+
+      - name: Commit updated forecast
+        run: |
+          git config user.name "forecast-bot"
+          git config user.email "forecast-bot@users.noreply.github.com"
+          git add output/forecast.json
+          git diff --staged --quiet || git commit -m "Update forecast"
+          git push
