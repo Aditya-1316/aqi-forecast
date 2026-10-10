@@ -34,7 +34,7 @@ OPENAQ = "https://api.openaq.org/v3"
 WEATHER_VARS = ["temperature_2m", "relative_humidity_2m", "wind_speed_10m",
                 "wind_direction_10m", "precipitation", "surface_pressure"]
 
-MODELS = Path("models")
+MODELS = Path(".")
 OUT = Path("output")
 REPLAY_DATA = Path("data/processed/delhi_hourly.csv")
 HISTORY_HOURS = 72          # enough for the 24h lags and rolling windows
