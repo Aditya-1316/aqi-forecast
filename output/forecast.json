@@ -1,6 +1,5 @@
 {
-  "status": "stale",
-  "generated_at": "2026-10-26 14:19 UTC",
-  "as_of": "2026-10-23 20:00:00",
-  "message": "Latest usable reading is 72 hours old, too old for a reliable forecast."
+  "status": "no_data",
+  "generated_at": "2026-10-26 20:31 UTC",
+  "message": "No recent PM2.5 readings were returned."
 }
