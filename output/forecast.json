@@ -1,6 +1,135 @@
 {
-  "status": "stale",
-  "generated_at": "2026-11-04 01:25 UTC",
-  "as_of": "2026-11-03 11:00:00",
-  "message": "Latest usable reading is 20 hours old, too old for a reliable forecast."
+  "status": "ok",
+  "generated_at": "2026-11-04 09:19 UTC",
+  "location": "Delhi (Chandni Chowk)",
+  "as_of": "2026-11-04 12:00:00",
+  "current": {
+    "pm25": 208.0,
+    "category": "Very Poor"
+  },
+  "forecasts": [
+    {
+      "horizon_h": 1,
+      "time": "2026-11-04 13:00:00",
+      "pm25": 208.0,
+      "category": "Very Poor",
+      "method": "persistence"
+    },
+    {
+      "horizon_h": 6,
+      "time": "2026-11-04 18:00:00",
+      "pm25": 157.7,
+      "category": "Very Poor",
+      "method": "model"
+    },
+    {
+      "horizon_h": 24,
+      "time": "2026-11-05 12:00:00",
+      "pm25": 182.2,
+      "category": "Very Poor",
+      "method": "model"
+    }
+  ],
+  "history_24h": [
+    {
+      "time": "2026-11-03 13:00:00",
+      "pm25": 216.4
+    },
+    {
+      "time": "2026-11-03 14:00:00",
+      "pm25": 217.6
+    },
+    {
+      "time": "2026-11-03 15:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-03 16:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-03 17:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-03 18:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-03 19:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-03 20:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-03 21:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-03 22:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-03 23:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-04 00:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-04 01:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-04 02:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-04 03:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-04 04:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-04 05:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-04 06:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-04 07:00:00",
+      "pm25": null
+    },
+    {
+      "time": "2026-11-04 08:00:00",
+      "pm25": 239.0
+    },
+    {
+      "time": "2026-11-04 09:00:00",
+      "pm25": 233.0
+    },
+    {
+      "time": "2026-11-04 10:00:00",
+      "pm25": 226.0
+    },
+    {
+      "time": "2026-11-04 11:00:00",
+      "pm25": 240.0
+    },
+    {
+      "time": "2026-11-04 12:00:00",
+      "pm25": 208.0
+    }
+  ],
+  "model": {
+    "trained_through": "2026-10-07 19:00:00",
+    "known_weakness": "Under-predicts in winters more severe than any seen in training (e.g. 2025-26 when held out). Gains are smaller and less reliable at 12h and 24h than at 6h."
+  }
 }
